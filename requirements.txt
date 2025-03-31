@@ -1,0 +1,5 @@
+fastapi>=0.68.0
+uvicorn>=0.15.0
+redis>=4.3.4
+pyjwt>=2.4.0
+python-multipart>=0.0.5
