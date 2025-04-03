@@ -1,8 +1,8 @@
-from fastapi import Depends, HTTPException
+from fastapi import Depends, HTTPException, Request
 from .auth import verify_token
 
-def get_current_user(token : str):
-    return verify_token(token)
+def get_current_user(request : Request, token : str):
+    return verify_token(token, request)
 
 def check_role(required_role : str):
     def role_checker(user: TokenData = Depends(get_current_user)):

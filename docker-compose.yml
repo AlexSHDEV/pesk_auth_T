@@ -4,6 +4,9 @@ services:
     build: .
     ports:
       - "8000:8000"
+      - "433:433" #HTTPS only in prod
+    environment:
+      - HTTPS_ONLY=True
     depends_on:
       - redis
   redis:
